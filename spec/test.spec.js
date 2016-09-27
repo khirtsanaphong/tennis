@@ -1,8 +1,16 @@
-describe("A suite", function() {
-  it("contains spec with an expectation", function() {
-    expect(true).toBe(true);
+function Tennis(){
+  this.start = function() {
 
-    // aaaaaaaaaaassssssssssddddddddddddddddddddddddddddddddfdfsaffs
+  };
+  this.echo = function() {
+    return 'Love - Love';
+  }
+}
 
-  });
-});
+describe('Tennis game', function(){
+  it('should echo "Love - Love" when starting the game', function(){
+    var tennis = new Tennis();
+    tennis.start();
+    expect(tennis.echo()).toEqual('Love - Love');
+  })
+})
