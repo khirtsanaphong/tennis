@@ -9,6 +9,9 @@ function Tennis(){
       else if(scoreA == 15){
       scoreA = 30;
       }
+      else if(scoreA == 30){
+        scoreA = 40;
+      }
 
     }
   };
@@ -22,7 +25,10 @@ function Tennis(){
     if(scoreA == 30 && scoreB == 0){
       return 'Thirty - Love';
     }
-    
+    if(scoreA == 40 && scoreB == 0){
+      return 'Forty - Love';
+    }
+  
  }
 }
 
@@ -37,6 +43,8 @@ describe('The Game', function(){
     tennis.scoreA();
     expect(tennis.echo()).toEqual('Fifteen - Love');
   })
-
-
+  it('The Gameeeeeee "Thirty - Love" Start !!!!', function(){
+    tennis.scoreA();
+    expect(tennis.echo()).toEqual('Thirty - Love');
+  })
 });
