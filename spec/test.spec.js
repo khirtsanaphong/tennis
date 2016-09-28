@@ -12,6 +12,10 @@ function Tennis(){
       else if(scoreA == 30){
         scoreA = 40;
       }
+      else if(scoreA == 40){
+        scoreA = 41;
+      }
+
     }
   };
   this.echo = function() {
@@ -26,6 +30,9 @@ function Tennis(){
     }
     if(scoreA == 40 && scoreB == 0){
       return 'Forty - Love';
+    }
+    if(scoreA > 40 && scoreB == 0){
+      return 'A Winnnn ';
     }
  }
 }
