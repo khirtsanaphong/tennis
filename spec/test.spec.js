@@ -1,7 +1,10 @@
 function Tennis(){
   var scoreA = 0;
   var scoreB = 0;
-  this.start = function() {
+  this.starts = function() {
+    scoreA = 0;
+    scoreB = 0;
+  }
     this.scoreA = function() {
       if(scoreA == 0){
         scoreA = 15;
@@ -15,7 +18,9 @@ function Tennis(){
       else if(scoreA == 40){
         scoreA = 41;
       }
-      else if(scoreB == 0){
+    }
+      this.scoreB = function() {
+      if(scoreB == 0){
         scoreB = 15;
       }
       else if(scoreB == 15){
@@ -27,9 +32,8 @@ function Tennis(){
       else if(scoreB == 40){
         scoreB = 41;
       }
-
     }
-  };
+
   this.echo = function() {
     if(scoreA === 0 && scoreB === 0){
       return 'Love - Love';
@@ -62,29 +66,35 @@ function Tennis(){
       return 'Fifteen - Fifteen';
     }
  }
-}
+};
 
-  var tennis = new Tennis();
+var tennis = new Tennis();
 
 describe('The Game', function(){
-  it('The Gameeeeeee "Love - Love" Start !!!! ', function(){
-    tennis.start();
+
+  it('The Games "Love - Love" Starting', function(){
+    tennis.starts();
     expect(tennis.echo()).toEqual('Love - Love');
   })
-  it('The Gameeeeeee "Fifteen - Love" Start !!!!', function(){
+  it('The Games "Fifteen - Love" Starting', function(){
     tennis.scoreA();
     expect(tennis.echo()).toEqual('Fifteen - Love');
   })
-  it('The Gameeeeeee "Thirty - Love" Start !!!!', function(){
+  it('The Games "Thirty - Love" Starting', function(){
     tennis.scoreA();
     expect(tennis.echo()).toEqual('Thirty - Love');
   })
-  it('The Gameeeeeee "Forty - Love" Start !!!!', function(){
+  it('The Games "Forty - Love" Starting', function(){
     tennis.scoreA();
     expect(tennis.echo()).toEqual('Forty - Love');
   })
-  it('The Gameeeeeee "Player A won" Start !!!!', function(){
+  it('The Games "Player A won" Starting', function(){
     tennis.scoreA();
     expect(tennis.echo()).toEqual('A Winnnn');
+    tennis.starts();
+  })
+  it('The Games "Love - Fifteen" Starting', function(){
+    tennis.scoreB();
+    expect(tennis.echo()).toEqual('Love - Fifteen');
   })
 });
