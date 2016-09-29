@@ -65,6 +65,9 @@ function Tennis(){
     else if(scoreA == 15 && scoreB == 15){
       return 'Fifteen - Fifteen';
     }
+    else if(scoreA == 30 && scoreB == 15){
+      return 'Fifteen - Fifteen';
+    }
  }
 };
 
@@ -96,5 +99,9 @@ describe('The Game', function(){
   it('The Games "Love - Fifteen" Starting', function(){
     tennis.scoreB();
     expect(tennis.echo()).toEqual('Love - Fifteen');
+  })
+  it('The Games "Love - Thirty" Starting', function(){
+    tennis.scoreB();
+    expect(tennis.echo()).toEqual('Love - Thirty');
   })
 });
