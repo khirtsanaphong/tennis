@@ -111,5 +111,11 @@ describe('The Game', function(){
   it('The Games "Player B won" Starting', function(){
     tennis.scoreB();
     expect(tennis.echo()).toEqual('B Winnnn');
+    tennis.starts();
+  })
+  it('The Games "Fifteen - Fifteen" Starting', function(){
+    tennis.scoreA();
+    tennis.scoreB();
+    expect(tennis.echo()).toEqual('Fifteen - Fifteen');
   })
 });
