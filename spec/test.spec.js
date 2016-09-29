@@ -15,6 +15,18 @@ function Tennis(){
       else if(scoreA == 40){
         scoreA = 41;
       }
+      else if(scoreB == 0){
+        scoreB = 15;
+      }
+      else if(scoreB == 15){
+      scoreB = 30;
+      }
+      else if(scoreB == 30){
+        scoreB = 40;
+      }
+      else if(scoreB == 40){
+        scoreB = 41;
+      }
 
     }
   };
@@ -22,17 +34,32 @@ function Tennis(){
     if(scoreA === 0 && scoreB === 0){
       return 'Love - Love';
     }
-    if(scoreA == 15 && scoreB == 0){
+    else if(scoreA == 15 && scoreB == 0){
       return 'Fifteen - Love';
     }
-    if(scoreA == 30 && scoreB == 0){
+    else if(scoreA == 30 && scoreB == 0){
       return 'Thirty - Love';
     }
-    if(scoreA == 40 && scoreB == 0){
+    else if(scoreA == 40 && scoreB == 0){
       return 'Forty - Love';
     }
-    if(scoreA > 40 && scoreB == 0){
-      return 'A Winnnn ';
+    else if(scoreA > 40 && scoreB == 0){
+      return 'A Winnnn';
+    }
+    else if(scoreA == 0 && scoreB == 15){
+      return 'Love - Fifteen';
+    }
+    else if(scoreA == 0 && scoreB == 30){
+      return 'Love - Thirty';
+    }
+    else if(scoreA == 0 && scoreB == 40){
+      return 'Love - Forty';
+    }
+    else if(scoreA == 0 && scoreB > 40){
+      return 'B Winnnn';
+    }
+    else if(scoreA == 15 && scoreB == 15){
+      return 'Fifteen - Fifteen';
     }
  }
 }
@@ -55,5 +82,9 @@ describe('The Game', function(){
   it('The Gameeeeeee "Forty - Love" Start !!!!', function(){
     tennis.scoreA();
     expect(tennis.echo()).toEqual('Forty - Love');
+  })
+  it('The Gameeeeeee "Player A won" Start !!!!', function(){
+    tennis.scoreA();
+    expect(tennis.echo()).toEqual('A Winnnn');
   })
 });
