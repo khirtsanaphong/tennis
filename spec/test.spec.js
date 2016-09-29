@@ -104,4 +104,8 @@ describe('The Game', function(){
     tennis.scoreB();
     expect(tennis.echo()).toEqual('Love - Thirty');
   })
+  it('The Games "Love - forty" Starting', function(){
+    tennis.scoreB();
+    expect(tennis.echo()).toEqual('Love - Forty');
+  })
 });
